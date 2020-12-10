@@ -25,10 +25,12 @@ import modeling
 import optimization
 import tokenization
 import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 flags = tf.compat.v1.flags
-
 FLAGS = flags.FLAGS
+
+tf.gfile = tf.io.gfile
 
 ## Required parameters
 flags.DEFINE_string(
@@ -805,7 +807,7 @@ def main(_):
         "was only trained up to sequence length %d" %
         (FLAGS.max_seq_length, bert_config.max_position_embeddings))
 
-  tf.gfile.MakeDirs(FLAGS.output_dir)
+  tf.gfile.makedirs(FLAGS.output_dir)
 
   task_name = FLAGS.task_name.lower()
 

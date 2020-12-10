@@ -27,6 +27,7 @@ import numpy as np
 import six
 import tensorflow as tf
 
+tf.gfile = tf.io.gfile
 
 class BertConfig(object):
   """Configuration for `BertModel`."""
