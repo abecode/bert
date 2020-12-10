@@ -117,3 +117,6 @@ dmypy.json
 
 # ignore glue data download
 glue_data/
+
+# ignore model download
+multi_cased_L-12_H-768_A-12/
